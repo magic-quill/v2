@@ -56,15 +56,104 @@
         }
 
         .authors-section {
-            margin: 1rem auto 1.5rem;
+            margin-top: 0rem;
             text-align: center;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
         }
 
         .authors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0rem 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .author-block {
             font-size: 1rem;
             color: #444;
             font-weight: 400;
-            letter-spacing: 0.01em;
+            white-space: nowrap;
+        }
+
+        .author-block sup {
+            font-size: 0.75em;
+            color: #E1683B;
+            font-weight: 600;
+        }
+
+        .author-block a {
+            color: #444;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .author-block a:hover {
+            color: #E1683B;
+            border-bottom: 2px solid #E1683B;
+        }
+
+        .author-affiliation {
+            color: #444;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .affiliation-text {
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        .affiliation-text sup {
+            color: #E1683B;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin: 1.2rem 0 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.35rem 1.25rem;
+            border-radius: 9999px;
+            /* background-color: #363636; */
+            border: 2px solid #666;
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hover Effects */
+        .nav-button:hover {
+            background-color: #D76F46;
+            /* transform: translateY(-2px); */
+            /* box-shadow: 0 4px 8px rgba(215, 111, 70, 0.3); */
+            color: #ffffff;
+        }
+
+        /* Icons inside the button (The emojis) */
+        .nav-button span:first-child {
+            font-size: 1.1rem;
         }
 
         /* Video Section */
@@ -324,8 +413,1063 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <h1 class="hero-title">MagicQuill V2</h1>
-        <p class="hero-subtitle">is coming</p>
+        <p class="hero-subtitle">Precise and Interactive Image Editing with Layered Visual Cues</p>
+
+        <div class="authors-section">
+            <div class="authors">
+                <span class="author-block">
+                    <a href="https://zliucz.github.io/">Zichen Liu</a><sup>*,1,2</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://bruceyy.com/">Yue Yu</a><sup>*,1,2</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://ken-ouyang.github.io/">Hao Ouyang</a><sup>2</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://github.com/qiuyu96">Qiuyu Wang</a><sup>2</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=dNhzCu4AAAAJ&hl">Shuailei Ma</a><sup>2,3</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://felixcheng97.github.io/">Ka Leong Cheng</a><sup>2</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://github.com/encounter1997">Wen Wang</a><sup>2,4</sup>
+                </span>
+                <span class="author-block">
+                    <a href="http://bqy.info/">Qingyan Bai</a><sup>1,2</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=f2VoRWYAAAAJ&hl">Yuxuan Zhang</a><sup>5</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://zengyh1900.github.io/">Yanhong Zeng</a><sup>2</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://yixuanli98.github.io/">Yixuan Li</a><sup>2,5</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://openreview.net/profile?id=~Xing_Zhu2">Xing Zhu</a><sup>2</sup>
+                </span>
+                <span class="author-block">
+                    <a href="https://shenyujun.github.io/">Yujun Shen</a><sup>2</sup>
+                </span>
+                <span class="author-block">
+                    <a href="http://cqf.io/">Qifeng Chen</a><sup>1</sup>
+                </span>
+            </div>
+
+            <div class="author-affiliation">
+                <span class="affiliation-text"><sup>1</sup>HKUST, <sup>2</sup>Ant Group, <sup>3</sup>NEU,
+                    <sup>4</sup>ZJU,
+                    <sup>5</sup>CUHK
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a class="nav-button" href="#" target="_blank" rel="noopener noreferrer">
+                <span>📄</span>
+                <span>Paper</span>
+            </a>
+            <a class="nav-button" href="#" target="_blank" rel="noopener noreferrer">
+                <span>💻</span>
+                <span>GitHub</span>
+            </a>
+            <a class="nav-button" href="#" target="_blank" rel="noopener noreferrer">
+                <span>🤗</span>
+                <span>HF Demo</span>
+            </a>
+        </div>
+
+        <div class="video-section">
+            <video src="./video.mp4" controls loop>
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h2 class="section-title">Layered Editing Examples</h2>
+        <p class="section-hint">
+            (Hover over <strong>LAYERED COMPOSITION</strong> to decompose layers)
+        </p>
+
+        <div class="gallery-wrapper">
+            <!-- Content Layer Section -->
+            <h3 class="subsection-title">Content Layer</h3>
+            <div class="gallery">
+                <!-- Case 1 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./puzzle/case_teaser/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case_teaser/fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case_teaser/prop_3.png" alt="Prop 3 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case_teaser/prop_2.png" alt="Prop 2 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case_teaser/prop_1.png" alt="Prop 1 Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./puzzle/case_teaser/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> A girl sits and embraces her dog, with her vintage car parked
+                        near by.
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./puzzle/case6/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case6/1763536471_fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case6/1763536471_prop_1.png" alt="Prop 2 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case6/1763536471_prop_0.png" alt="Prop 1 Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./puzzle/case6/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> A man in cloak rides a white horse through a serene lake at
+                        dawn.
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 3 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./puzzle/case5/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case5/1763478476_fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case5/1763478476_prop_0.png" alt="Prop 1 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case5/1763478476_prop_1.png" alt="Prop 2 Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./puzzle/case5/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> A group photo of 4 people in a sunny day.
+                    </div>
+                </div>
+
+                <!-- Case 4 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./puzzle/case4/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case4/1763475394_prop_3.png" alt="Prop 4 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case4/1763475394_prop_2.png" alt="Prop 3 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case4/1763475394_prop_1.png" alt="Prop 2 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case4/1763475394_prop_0.png" alt="Prop 1 Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./puzzle/case4/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> A shot of a modern industrial living room with furnitures.
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 5 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./puzzle/case3/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case3/1763474578_fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case3/1763474578_prop_0.png" alt="Prop 1 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case3/1763474578_prop_1.png" alt="Prop 2 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case3/1763474578_prop_2.png" alt="Prop 3 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case3/1763474578_prop_3.png" alt="Prop 4 Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./puzzle/case3/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> A man in denim jacket holds a coke and shows a finger heart.
+                    </div>
+                </div>
+
+                <!-- Case 6 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./puzzle/case1/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case1/1763468712_fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case1/1763468712_prop_0.png" alt="Prop 1 Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./puzzle/case1/1763468712_prop_1.png" alt="Prop 2 Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./puzzle/case1/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> A man hugs the rabbit and the fox.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Layer Section -->
+            <h3 class="subsection-title">Control Layer</h3>
+
+            <!-- Structural Layer: Edge -->
+            <h4 class="subsubsection-title">Structural Layer: Edge</h4>
+            <div class="gallery">
+                <!-- Case 1 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./edge/case_teaser/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./edge/case_teaser/1763605477_add_edge_mask.png" alt="Add Brush Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./edge/case_teaser/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Add a leather collar with bell to the dog.
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./edge/case1/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./edge/case1/1763537951_remove_edge_mask.png" alt="Subtract Brush Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./edge/case1/1763537951_add_edge_mask.png" alt="Add Brush Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./edge/case1/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Make this cup extra large.
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 3 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./edge/case6/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./edge/case6/1763542902_remove_edge_mask.png" alt="Subtract Brush Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./edge/case6/1763542902_add_edge_mask.png" alt="Add Brush Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./edge/case6/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Let this cute ghost have arms and legs.
+                    </div>
+                </div>
+
+                <!-- Case 4 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./edge/case5/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./edge/case5/1763541922_remove_edge_mask.png" alt="Subtract Brush Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./edge/case5/1763541922_add_edge_mask.png" alt="Add Brush Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./edge/case5/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Make the rabbit's ears bigger.
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 5 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./edge/case3/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./edge/case3/1763540484_add_edge_mask.png" alt="Add Brush Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./edge/case3/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Add a flower in this hand.
+                    </div>
+                </div>
+
+                <!-- Case 6 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./edge/case4/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./edge/case4/1763541403_add_edge_mask.png" alt="Add Brush Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./edge/case4/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Let him wear a golden dollar-shape glasses.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Layer: Color -->
+            <h4 class="subsubsection-title">Color Layer: Color</h4>
+            <div class="gallery">
+                <!-- Case 1 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./color/case_teaser/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./color/case_teaser/color_layer.png" alt="Color Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./color/case_teaser/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Turn her T-shirt's color to deep green.
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./color/case1/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./color/case1/color_layer.png" alt="Color Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./color/case1/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Turn his T-shirt into vibrant, seamless multi-color horizontal
+                        gradient
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 3 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./color/case2/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./color/case2/color_layer.png" alt="Color Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./color/case2/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Turn the flowers into blue and red.
+                    </div>
+                </div>
+
+                <!-- Case 4 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./color/case3/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./color/case3/color_layer.png" alt="Color Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./color/case3/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Turn her crown into blue diamond.
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 5 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./color/case4/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./color/case4/color_layer.png" alt="Color Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./color/case4/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Turn the dolphin into pink.
+                    </div>
+                </div>
+
+                <!-- Case 6 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./color/case5/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./color/case5/color_layer.png" alt="Color Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./color/case5/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Turn the woman's dress into yellow.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spatial Layer: Local Edit -->
+            <h4 class="subsubsection-title">Spatial Layer: Local Edit</h4>
+            <div class="gallery">
+                <!-- Case 1 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./local/case_teaser/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./local/case_teaser/fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./local/case_teaser/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Turn the dog's head to face the camera.
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./local/case1/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./local/case1/1763630792_fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./local/case1/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Convert the man into black and white lineart style.
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 3 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./local/case2/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./local/case2/1763631592_fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./local/case2/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Add candles on the cake and a fork by the cake.
+                    </div>
+                </div>
+
+                <!-- Case 4 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./local/case3/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./local/case3/1763632235_fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./local/case3/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Change the text from "NanoBanana" to "MagicQuill", and the
+                        banana neon icon to a feather quill icon.
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 5 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./local/case4/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./local/case4/1763633992_fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./local/case4/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Add a white horse in the forest.
+                    </div>
+                </div>
+
+                <!-- Case 6 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./local/case5/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./local/case5/1763634159_fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./local/case5/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Let the man wear white formal suit.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spatial Layer: Removal -->
+            <h4 class="subsubsection-title">Spatial Layer: Removal</h4>
+            <div class="gallery">
+                <!-- Case 1 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./removal/case1/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./removal/case1/fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./removal/case1/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Remove the instance.
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./removal/case2/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./removal/case2/fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./removal/case2/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Remove the instance.
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 3 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./removal/case3/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./removal/case3/fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./removal/case3/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Remove the instance.
+                    </div>
+                </div>
+
+                <!-- Case 4 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./removal/case4/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./removal/case4/fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./removal/case4/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Remove the instance.
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery">
+                <!-- Case 5 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./removal/case5/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./removal/case5/fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./removal/case5/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Remove the instance.
+                    </div>
+                </div>
+
+                <!-- Case 6 -->
+                <div class="case-item">
+                    <div>
+                        <div class="image-label">Layered Composition</div>
+                        <div class="layers-container">
+                            <div class="layers-stack">
+                                <div class="layer">
+                                    <img src="./removal/case6/background.png" alt="Background Layer">
+                                </div>
+                                <div class="layer">
+                                    <img src="./removal/case6/fill_mask.png" alt="Fill Mask Layer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-label">Editing Result</div>
+                        <div class="result-container">
+                            <img src="./removal/case6/result.png" alt="Result" class="result-image">
+                        </div>
+                    </div>
+                    <div class="case-prompt">
+                        <strong>Editing Prompt:</strong> Remove the instance.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>MagicQuill V2: Precise and Interactive Image Editing with Layered Visual Cues</p>
+    </footer>
+
+    <script>
+        // Auto-play video when in viewport
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play().catch(e => console.log('Autoplay prevented:', e));
+                } else {
+                    video.pause();
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('video').forEach(video => {
+            observer.observe(video);
+        });
+
+        // Pause videos when page is hidden
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                document.querySelectorAll('video').forEach(video => video.pause());
+            }
+        });
+
+        // Dynamically set layer transforms based on number of layers
+        function initializeLayers() {
+            document.querySelectorAll('.layers-container').forEach(container => {
+                const layers = container.querySelectorAll('.layer');
+                const numLayers = layers.length;
+
+                if (numLayers === 0) return;
+
+                layers.forEach((layer, index) => {
+                    // Calculate position from -1 (leftmost) to +1 (rightmost)
+                    const position = numLayers === 1 ? 0 : (index / (numLayers - 1)) * 2 - 1;
+
+                    // Calculate values based on position
+                    // X: spread horizontally (max 35% on each side)
+                    const translateX = position * 25;
+
+                    // Z: depth effect (max 40px forward/backward)
+                    const translateZ = position * 20;
+
+                    // Scale: from 0.75 (back) to 1.15 (front)
+                    const scale = 0.75 + (position + 1) * 0.2;
+
+                    // Set CSS variables
+                    layer.style.setProperty('--layer-x', `${translateX}%`);
+                    layer.style.setProperty('--layer-z', `${translateZ}px`);
+                    layer.style.setProperty('--layer-scale', scale);
+
+                    // Set z-index
+                    layer.style.zIndex = index + 1;
+                });
+            });
+        }
+
+        // Add smooth layer hovering with proper z-index management
+        document.querySelectorAll('.layer').forEach(layer => {
+            layer.addEventListener('mouseenter', function () {
+                this.style.zIndex = '100';
+            });
+
+            layer.addEventListener('mouseleave', function () {
+                // Reset to original z-index
+                const layers = this.parentElement.querySelectorAll('.layer');
+                layers.forEach((l, idx) => {
+                    l.style.zIndex = idx + 1;
+                });
+            });
+        });
+
+        // Initialize layers on page load
+        initializeLayers();
+    </script>
 </body>
 
 </html>
