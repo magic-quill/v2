@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagicQuill V2: Precise and Interactive Image Editing with Layered Visual Cues</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F4DDB3;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            background: white;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            color: #E1683B;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-family: 'Lora', serif;
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: #666;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            font-weight: 400;
+        }
+
+        .authors-section {
+            margin: 1rem auto 1.5rem;
+            text-align: center;
+        }
+
+        .authors {
+            font-size: 1rem;
+            color: #444;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        /* Video Section */
+        .video-section {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .video-section video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            color: #E1683B;
+            text-align: center;
+            margin: 2.5rem 0 0.8rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #888;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .section-hint strong {
+            color: #d47d3f;
+            font-weight: 600;
+        }
+
+        /* Subsection Title */
+        .subsection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 600;
+            color: #d47d3f;
+            text-align: left;
+            margin: 2rem 0 1rem;
+            padding-left: 0.5rem;
+            border-left: 4px solid #E1683B;
+            letter-spacing: -0.01em;
+        }
+
+        /* Sub-subsection Title */
+        .subsubsection-title {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            font-weight: 600;
+            color: #666;
+            text-align: left;
+            margin: 1.5rem 0 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid #ccc;
+            letter-spacing: 0.01em;
+        }
+
+        /* Gallery wrapper for better organization */
+        .gallery-wrapper {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+        }
+
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .case-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            background: white;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .case-prompt {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #f0f0f0;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        .case-prompt strong {
+            font-weight: 600;
+            color: #E1683B;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            margin-right: 0.5rem;
+        }
+
+        /* Layered Images Container */
+        .layers-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            cursor: pointer;
+            perspective: 1200px;
+            z-index: 1;
+        }
+
+        .layers-container:hover {
+            z-index: 10;
+        }
+
+        .layers-stack {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center center;
+        }
+
+        .layer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #b5b5b5;
+        }
+
+        /* Initial stacked state */
+        .layer {
+            top: 0;
+            left: 0;
+            /* z-index set dynamically by JavaScript */
+        }
+
+        /* Layered perspective effect on hover - dynamically set by JavaScript */
+        .layers-container:hover .layer {
+            transform: translateX(var(--layer-x, 0%)) translateZ(var(--layer-z, 0px)) scale(var(--layer-scale, 1));
+        }
+
+        .layers-container:hover .layer img {
+            opacity: 0.4;
+            /* background-color: rgba(255, 255, 255, 0.2); */
+        }
+
+        /* Individual layer hover effect */
+        .layer:hover {
+            z-index: 100 !important;
+        }
+
+        .layer:hover img {
+            /* transform: scale(1.1); */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            opacity: 1 !important;
+        }
+
+        /* Result Image */
+        .result-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+        }
+
+        .result-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .result-image:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Labels */
+        .image-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #666;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .case-item {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ccc;
+            margin: 2rem 0 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #999;
+            background: white;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">MagicQuill V2</h1>
+        <p class="hero-subtitle">is coming</p>
+    </section>
+</body>
+
+</html>
