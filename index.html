@@ -307,6 +307,10 @@
             border: 1px solid #b5b5b5;
         }
 
+        .layer img.remove-mask {
+            opacity: 0.6;
+        }
+
         /* Initial stacked state */
         .layer {
             top: 0;
@@ -406,6 +410,41 @@
             border-top: 1px solid #e5e5e5;
             margin-top: 2rem;
         }
+
+        /* Abstract Section */
+        .abstract-section {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .abstract-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 3vw, 2rem);
+            font-weight: 600;
+            color: #E1683B;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .abstract-content {
+            font-family: 'Lora', serif;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            /* background: white; */
+            padding: 2rem;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .abstract-content p {
+            margin-bottom: 1rem;
+        }
+
+        .abstract-content p:last-child {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 
@@ -484,10 +523,35 @@
         </div>
 
         <div class="video-section">
-            <video src="./video.mp4" controls loop>
+            <video src="./video.mp4" controls autoplay muted loop>
                 Your browser does not support the video tag.
             </video>
         </div>
+
+        <!-- Abstract Section -->
+        <section class="abstract-section">
+            <h2 class="abstract-title">Abstract</h2>
+            <div class="abstract-content">
+                <p>
+                    We propose MagicQuill V2, a novel system that introduces a layered composition paradigm to
+                    generative
+                    image editing, bridging the gap between the semantic power of diffusion models and the granular
+                    control of traditional graphics software. While diffusion transformers excel at holistic
+                    generation,
+                    their use of singular, monolithic prompts fails to disentangle distinct user intentions for content,
+                    position, and appearance. To overcome this, our method deconstructs creative intent into a stack of
+                    controllable visual cues: a content layer for what to create, a spatial layer for where to place it,
+                    a structural layer for how it is shaped, and a color layer for its palette. Our technical
+                    contributions
+                    include a specialized data generation pipeline for context-aware content integration, a unified
+                    control
+                    module to process all visual cues, and a fine-tuned spatial branch for precise local editing,
+                    including object removal. Extensive experiments validate that this layered approach effectively
+                    resolves
+                    the user intention gap, granting creators direct, intuitive control over the generative process.
+                </p>
+            </div>
+        </section>
     </section>
 
     <!-- Gallery Section -->
@@ -754,7 +818,7 @@
                                     <img src="./edge/case1/background.png" alt="Background Layer">
                                 </div>
                                 <div class="layer">
-                                    <img src="./edge/case1/1763537951_remove_edge_mask.png" alt="Subtract Brush Layer">
+                                    <img src="./edge/case1/1763537951_remove_edge_mask.png" alt="Subtract Brush Layer" class="remove-mask">
                                 </div>
                                 <div class="layer">
                                     <img src="./edge/case1/1763537951_add_edge_mask.png" alt="Add Brush Layer">
@@ -785,7 +849,7 @@
                                     <img src="./edge/case6/background.png" alt="Background Layer">
                                 </div>
                                 <div class="layer">
-                                    <img src="./edge/case6/1763542902_remove_edge_mask.png" alt="Subtract Brush Layer">
+                                    <img src="./edge/case6/1763542902_remove_edge_mask.png" alt="Subtract Brush Layer" class="remove-mask">
                                 </div>
                                 <div class="layer">
                                     <img src="./edge/case6/1763542902_add_edge_mask.png" alt="Add Brush Layer">
@@ -814,7 +878,7 @@
                                     <img src="./edge/case5/background.png" alt="Background Layer">
                                 </div>
                                 <div class="layer">
-                                    <img src="./edge/case5/1763541922_remove_edge_mask.png" alt="Subtract Brush Layer">
+                                    <img src="./edge/case5/1763541922_remove_edge_mask.png" alt="Subtract Brush Layer" class="remove-mask">
                                 </div>
                                 <div class="layer">
                                     <img src="./edge/case5/1763541922_add_edge_mask.png" alt="Add Brush Layer">
@@ -1231,7 +1295,7 @@
                                     <img src="./removal/case1/background.png" alt="Background Layer">
                                 </div>
                                 <div class="layer">
-                                    <img src="./removal/case1/fill_mask.png" alt="Fill Mask Layer">
+                                    <img src="./removal/case1/remove_mask.png" alt="Subtract Brush Layer" class="remove-mask">
                                 </div>
                             </div>
                         </div>
@@ -1257,7 +1321,7 @@
                                     <img src="./removal/case2/background.png" alt="Background Layer">
                                 </div>
                                 <div class="layer">
-                                    <img src="./removal/case2/fill_mask.png" alt="Fill Mask Layer">
+                                    <img src="./removal/case2/remove_mask.png" alt="Subtract Brush Layer" class="remove-mask">
                                 </div>
                             </div>
                         </div>
@@ -1285,7 +1349,7 @@
                                     <img src="./removal/case3/background.png" alt="Background Layer">
                                 </div>
                                 <div class="layer">
-                                    <img src="./removal/case3/fill_mask.png" alt="Fill Mask Layer">
+                                    <img src="./removal/case3/remove_mask.png" alt="Subtract Brush Layer" class="remove-mask">
                                 </div>
                             </div>
                         </div>
@@ -1311,7 +1375,7 @@
                                     <img src="./removal/case4/background.png" alt="Background Layer">
                                 </div>
                                 <div class="layer">
-                                    <img src="./removal/case4/fill_mask.png" alt="Fill Mask Layer">
+                                    <img src="./removal/case4/remove_mask.png" alt="Subtract Brush Layer" class="remove-mask">
                                 </div>
                             </div>
                         </div>
@@ -1339,7 +1403,7 @@
                                     <img src="./removal/case5/background.png" alt="Background Layer">
                                 </div>
                                 <div class="layer">
-                                    <img src="./removal/case5/fill_mask.png" alt="Fill Mask Layer">
+                                    <img src="./removal/case5/remove_mask.png" alt="Subtract Brush Layer" class="remove-mask">
                                 </div>
                             </div>
                         </div>
@@ -1365,7 +1429,7 @@
                                     <img src="./removal/case6/background.png" alt="Background Layer">
                                 </div>
                                 <div class="layer">
-                                    <img src="./removal/case6/fill_mask.png" alt="Fill Mask Layer">
+                                    <img src="./removal/case6/remove_mask.png" alt="Subtract Brush Layer" class="remove-mask">
                                 </div>
                             </div>
                         </div>
